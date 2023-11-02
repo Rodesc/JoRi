@@ -6,8 +6,8 @@ import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 const DEFAULT_COORDS = {
-    lat: 52.370216,
-    lng: 4.895168,
+    lat: 56.96070701351528,
+    lng: 24.063530026505948,
 };
 
 function Map(props) {
@@ -15,11 +15,9 @@ function Map(props) {
     const [coords, setCoords] = useState(DEFAULT_COORDS)
     var projects = props.projects || [];
 
-    useEffect(() => {
-        setCoords(props.coords)
-    }, [props.coords])
 
     useEffect(() => {
+        setCoords(props.currentProject.coords)
         renderMarkers()
     }, [props.projects, props.currentProject])
     
@@ -61,7 +59,7 @@ function Map(props) {
     <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyAFmTSc0wKvPjzBMT3Z1iBzd6FI6fY7qyM" }}
         center={coords}
-        zoom={15}
+        zoom={16}
         onChildClick={(key) => alert(key)}
     >
         {markers}

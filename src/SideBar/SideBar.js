@@ -33,16 +33,14 @@ function SideBar(props) {
         <div style={styles.projectInfo}>
             <h1>{props.project.title}</h1>
             <p>{props.project.description}</p>
+            <p>{props.project.coords.lat}, {props.project.coords.lng}</p>
         </div>
         <Box style={styles.commentsContainer}>
-            {/* Line */}
             <div style={{height: 1, backgroundColor: 'grey', margin: 4}}/>
             <span>
                 What your neighbors are saying about this project:
             </span>
-            {/* Comments */}
             {renderComments()}
-            {/* Comment input form */}
             <div style={{height: 1, backgroundColor: 'grey', margin: 4}}/>
             <div style={styles.commentInputContainer}>
                 <TextField id="outlined" label="Post a comment ..." variant="outlined" />
